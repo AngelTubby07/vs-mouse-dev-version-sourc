@@ -91,6 +91,9 @@ class TitleState extends MusicBeatState
 
 	override public function create():Void
 	{
+		#if android
+		FlxG.android.preventDefaultKeys = [BACK];
+		#end
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
 
@@ -658,8 +661,15 @@ class TitleState extends MusicBeatState
 					addMoreText('Vs Mouse');
 				case 13:
 					addMoreText('Dev Version');
+                                case 14:
+					deleteCoolText();
+                                case 15:
+                                        createCoolText(['Port By'], -40);
+                                case 16:
+                                        addMoreText('Skkariu :D'), -15);
 	
-				case 14:
+	
+				case 17:
 					skipIntro();
 			}
 		}
