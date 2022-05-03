@@ -32,6 +32,7 @@ class Main extends Sprite
 	public function new()
 	{
 		super();
+ 	        SUtil.gameCrashCheck();
 
 		if (stage != null)
 		{
@@ -75,6 +76,7 @@ class Main extends Sprite
 		// fuck you, persistent caching stays ON during sex
 		FlxGraphic.defaultPersist = true;
 		// the reason for this is we're going to be handling our own cache smartly
+		SUtil.doTheCheck();
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
 
 		#if !mobile
